@@ -33,14 +33,20 @@ class View {
   }
 
   makeMove(square) {
-    // if something unclicked gets clicked add "clicked-X/O" class 
-    // depending on game.currentPlayer
-    // let currentSymbol = this.game.currentPlayer
     if (square.className === 'unclicked') {
       if (this.game.currentPlayer === 'x') {
         square.className = 'clicked-x';
+        square.innerText = 'X';
       } else {
         square.className = 'clicked-o';
+        square.innerText = 'O';
+      }
+    }
+    if (this.game.isOver()) {
+      if (this.game.winner()) {
+        alert(`${this.game.winner()} is the winner!`);
+      } else {
+        alert("It's a draw :(")
       }
     }
   }

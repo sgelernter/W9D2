@@ -7,4 +7,6 @@ window.Game = Game;
 
 document.addEventListener("DOMContentLoaded", () => {
   const fig = document.querySelector(".ttt");
+  const game = new Game();
+  new View(game);
 });
